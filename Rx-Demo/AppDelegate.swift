@@ -10,12 +10,13 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    static let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var navigationController : UINavigationController?
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        initWindow()
         return true
     }
 
@@ -40,7 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func initWindow()  {
+        let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = UIColor.white
+        self.window?.rootViewController = loginViewController
+        self.window?.makeKeyAndVisible()
+    }
 }
 
