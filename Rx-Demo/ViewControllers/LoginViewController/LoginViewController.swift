@@ -63,6 +63,7 @@ class LoginViewController: UIViewController {
             .subscribe(
                 onNext: { isLogined in
                     if isLogined.statusCode == Constant.StatusCode.statusCode_OK {
+                        UserDefaults.standard.set(isLogined.user.userId, forKey: "userId")
                         let productsViewController = ProductsViewController(nibName: "ProductsViewController", bundle: nil)
                         AppDelegate.appDelegate.navigationController = UINavigationController(rootViewController: productsViewController)
                         AppDelegate.appDelegate.window?.rootViewController = AppDelegate.appDelegate.navigationController

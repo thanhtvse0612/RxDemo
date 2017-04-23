@@ -13,7 +13,6 @@ public class LoadingView: UIView {
     let indicatorView : UIActivityIndicatorView?
     static var loadingView = LoadingView(frame: UIScreen.main.bounds)
     
-    
     override init(frame: CGRect) {
         indicatorView = UIActivityIndicatorView()
         super.init(frame: frame)
@@ -45,27 +44,9 @@ public class LoadingView: UIView {
 }
 
 extension Reactive where Base:LoadingView  {
-//    public var isShowing: AnyObserver<Bool> {
-//        return AnyObserver { event in
-//            MainScheduler.ensureExecutingOnScheduler()
-//            
-//            switch event {
-//            case let Event.next(boolValue):
-//                self.showLoading(boolValue)
-//            case let Event.error(err):
-//                print("Binding error to UI: \(err)")
-//            case Event.completed:
-//                break
-//            }
-//
-//        }
-//    }
-    
     public var isShowing: UIBindingObserver<Base, Bool> {
         return UIBindingObserver(UIElement: self.base) { loadingView, active in
             loadingView.showLoading(active)
         }
     }
-
-
 }

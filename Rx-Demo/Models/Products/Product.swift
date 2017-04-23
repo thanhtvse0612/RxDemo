@@ -41,6 +41,7 @@ class Product: Mappable {
         productRestaurantName <- map["restaurantName"]
         productUrlRelated <- map["urlrelate"]
     }
+    
 }
 
 extension Product {

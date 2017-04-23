@@ -46,10 +46,9 @@ class CartDetailCell: UITableViewCell {
                 .rx
                 .controlEvent(UIControlEvents.touchUpInside)
                 .subscribe { event in
-                    
-                    if var value = CommonUtils.cartObservable.value[cartDetailViewModel.cart.product.productId] {
+                    if var value = Singleton.cartObservable.value["\(cartDetailViewModel.cart.product.productId)"] {
                         value.count += 1
-                        CommonUtils.cartObservable.value.updateValue(value, forKey: cartDetailViewModel.cart.product.productId)
+                        Singleton.cartObservable.value.updateValue(value, forKey: "\(cartDetailViewModel.cart.product.productId)")
                     }
                 }
                 .addDisposableTo(disposableBag)
@@ -58,13 +57,13 @@ class CartDetailCell: UITableViewCell {
                 .rx
                 .controlEvent(UIControlEvents.touchUpInside)
                 .subscribe { event in
-                    if var value = CommonUtils.cartObservable.value[cartDetailViewModel.cart.product.productId]{
-                        if value.count > 0 {
+                    if var value = Singleton.cartObservable.value["\(cartDetailViewModel.cart.product.productId)"]{
+                        if value.count > 1 {
                             value.count -= 1
+                            Singleton.cartObservable.value.updateValue(value, forKey: "\(cartDetailViewModel.cart.product.productId)")
                         } else {
-                            value.count = 0
+                            Singleton.cartObservable.value.removeValue(forKey: "\(cartDetailViewModel.cart.product.productId)")
                         }
-                        CommonUtils.cartObservable.value.updateValue(value, forKey: cartDetailViewModel.cart.product.productId)
                     }
                 }
                 .addDisposableTo(disposableBag)

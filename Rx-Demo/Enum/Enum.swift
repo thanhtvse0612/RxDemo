@@ -26,7 +26,7 @@ enum HTTPError : Error {
     case ResponseUndefined
 }
 
-enum HTTPMethod {
-    case GET
-    case POST
+enum HTTPMethod : String {
+    case GET = "GET"
+    case POST = "POST"
 }

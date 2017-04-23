@@ -124,11 +124,11 @@ class BadgeButton : UIBarButtonItem {
     
     func updateBadgeValueAnimated(animated : Bool) {
         if(animated == true && self.shouldAnimateBadge && self.badge.text != self.badgeValue) {
-            let animation = CABasicAnimation .init(keyPath: "transform.scale")
+            let animation = CABasicAnimation(keyPath: "transform.scale")
             animation.fromValue = 1.5
             animation.toValue = 1
             animation.duration = 0.2
-            animation.timingFunction = CAMediaTimingFunction .init(controlPoints: 0.4, 1.3, 1, 1)
+            animation.timingFunction = CAMediaTimingFunction(controlPoints: 0.4, 1.3, 1, 1)
             self.badge.layer.add(animation, forKey: "bounceAnimation")
         }
         self.badge.text = self.badgeValue

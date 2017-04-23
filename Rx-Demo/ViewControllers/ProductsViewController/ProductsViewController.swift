@@ -48,7 +48,7 @@ class ProductsViewController: BaseViewController, UITableViewDelegate {
 
         self.navigationItem.rightBarButtonItem = self.btnBarBadge
         
-        CommonUtils
+        Singleton
             .cartObservable
             .asObservable()
             .subscribe { value in
@@ -100,12 +100,12 @@ class ProductsViewController: BaseViewController, UITableViewDelegate {
                         }
                         print(viewModel.product.productName)
                         
-                        if var value = CommonUtils.cartObservable.value[viewModel.product.productId] {
+                        if var value = Singleton.cartObservable.value["\(viewModel.product.productId)"] {
                             value.count += 1
                             value.product = viewModel.product
-                            CommonUtils.cartObservable.value.updateValue(value, forKey: viewModel.product.productId)
+                            Singleton.cartObservable.value.updateValue(value, forKey: "\(viewModel.product.productId)")
                         } else {
-                            CommonUtils.cartObservable.value[viewModel.product.productId] = (1, viewModel.product)
+                            Singleton.cartObservable.value["\(viewModel.product.productId)"] = (1, viewModel.product)
                         }
                         
                         

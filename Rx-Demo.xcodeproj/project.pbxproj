@@ -54,9 +54,13 @@
 		8D7878F61E617DC700B60401 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7878F51E617DC700B60401 /* Protocols.swift */; };
 		8D7878F91E618E3200B60401 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7878F81E618E3200B60401 /* APIRequest.swift */; };
 		8D7878FC1E618F8D00B60401 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7878FB1E618F8D00B60401 /* Extension+String.swift */; };
-		8DA253471E7B23610099C66B /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA253461E7B23610099C66B /* CommonUtils.swift */; };
+		8DA253471E7B23610099C66B /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA253461E7B23610099C66B /* Singleton.swift */; };
 		8DACABA81EA1672700B8F484 /* CartDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACABA71EA1672700B8F484 /* CartDetailViewModel.swift */; };
 		8DACABAB1EA1678C00B8F484 /* CheckoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACABAA1EA1678C00B8F484 /* CheckoutResponse.swift */; };
+		8DACABAD1EA247E100B8F484 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACABAC1EA247E100B8F484 /* APIProvider.swift */; };
+		8DACABAF1EA274F600B8F484 /* ServerAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACABAE1EA274F600B8F484 /* ServerAPIProvider.swift */; };
+		8DACABB21EA29AE600B8F484 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACABB11EA29AE600B8F484 /* Receipt.swift */; };
+		8DACABB41EA2A57700B8F484 /* Extension+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACABB31EA2A57700B8F484 /* Extension+Dictionary.swift */; };
 		8DC4E91D1EA12450005DAED1 /* Extension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC4E91C1EA12450005DAED1 /* Extension+Array.swift */; };
 		8DF101D61E62869A00838F73 /* ActivitiIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF101D51E62869A00838F73 /* ActivitiIndicator.swift */; };
 /* End PBXBuildFile section */
@@ -134,9 +138,13 @@
 		8D7878F51E617DC700B60401 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Protocols/Protocols.swift; sourceTree = "<group>"; };
 		8D7878F81E618E3200B60401 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequest.swift; path = API/APIRequest.swift; sourceTree = "<group>"; };
 		8D7878FB1E618F8D00B60401 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension+String.swift"; path = "Extension/Extension+String.swift"; sourceTree = "<group>"; };
-		8DA253461E7B23610099C66B /* CommonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonUtils.swift; path = Utilities/CommonUtils.swift; sourceTree = "<group>"; };
+		8DA253461E7B23610099C66B /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Singleton.swift; path = Utilities/Singleton.swift; sourceTree = "<group>"; };
 		8DACABA71EA1672700B8F484 /* CartDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartDetailViewModel.swift; path = ViewModels/CartDetailViewModel/CartDetailViewModel.swift; sourceTree = "<group>"; };
 		8DACABAA1EA1678C00B8F484 /* CheckoutResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckoutResponse.swift; path = Models/CheckoutResponse/CheckoutResponse.swift; sourceTree = "<group>"; };
+		8DACABAC1EA247E100B8F484 /* APIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIProvider.swift; path = API/APIProvider.swift; sourceTree = "<group>"; };
+		8DACABAE1EA274F600B8F484 /* ServerAPIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerAPIProvider.swift; path = API/ServerAPIProvider.swift; sourceTree = "<group>"; };
+		8DACABB11EA29AE600B8F484 /* Receipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Receipt.swift; path = Models/Receipt/Receipt.swift; sourceTree = "<group>"; };
+		8DACABB31EA2A57700B8F484 /* Extension+Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension+Dictionary.swift"; path = "Extension/Extension+Dictionary.swift"; sourceTree = "<group>"; };
 		8DC4E91C1EA12450005DAED1 /* Extension+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension+Array.swift"; path = "Extension/Extension+Array.swift"; sourceTree = "<group>"; };
 		8DF101D51E62869A00838F73 /* ActivitiIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivitiIndicator.swift; path = Utilities/ActivitiIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,13 +215,6 @@
 				8D57D4151E7970ED001A1169 /* User.swift */,
 			);
 			name = LoginResponse;
-			sourceTree = "<group>";
-		};
-		8D041A511E63B396007A9D5F /* RegisterResponse */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = RegisterResponse;
 			sourceTree = "<group>";
 		};
 		8D041A551E63DD67007A9D5F /* Functions */ = {
@@ -487,9 +488,9 @@
 		8D7878EA1E61746800B60401 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8DACABB01EA29ACB00B8F484 /* Receipt */,
 				8DACABA91EA1676C00B8F484 /* CheckoutResponse */,
 				8D041A671E6411FC007A9D5F /* ProductsResponse */,
-				8D041A511E63B396007A9D5F /* RegisterResponse */,
 				8D041A501E63B38E007A9D5F /* LoginResponse */,
 			);
 			name = Model;
@@ -506,7 +507,8 @@
 		8D7878F71E618E1C00B60401 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				8D7878F81E618E3200B60401 /* APIRequest.swift */,
+				8DACABAC1EA247E100B8F484 /* APIProvider.swift */,
+				8DACABB51EA3A1E500B8F484 /* LocalServerAPI */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -521,6 +523,7 @@
 				8D11BB891E65598D008C36A4 /* Extension+UIImageView.swift */,
 				8D11BB981E655FA2008C36A4 /* Extension+UIImage.swift */,
 				8DC4E91C1EA12450005DAED1 /* Extension+Array.swift */,
+				8DACABB31EA2A57700B8F484 /* Extension+Dictionary.swift */,
 			);
 			name = Extenstion;
 			sourceTree = "<group>";
@@ -528,7 +531,7 @@
 		8DA253451E7B23430099C66B /* CommonUtils */ = {
 			isa = PBXGroup;
 			children = (
-				8DA253461E7B23610099C66B /* CommonUtils.swift */,
+				8DA253461E7B23610099C66B /* Singleton.swift */,
 			);
 			name = CommonUtils;
 			sourceTree = "<group>";
@@ -557,6 +560,23 @@
 				8DACABAA1EA1678C00B8F484 /* CheckoutResponse.swift */,
 			);
 			name = CheckoutResponse;
+			sourceTree = "<group>";
+		};
+		8DACABB01EA29ACB00B8F484 /* Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				8DACABB11EA29AE600B8F484 /* Receipt.swift */,
+			);
+			name = Receipt;
+			sourceTree = "<group>";
+		};
+		8DACABB51EA3A1E500B8F484 /* LocalServerAPI */ = {
+			isa = PBXGroup;
+			children = (
+				8D7878F81E618E3200B60401 /* APIRequest.swift */,
+				8DACABAE1EA274F600B8F484 /* ServerAPIProvider.swift */,
+			);
+			name = LocalServerAPI;
 			sourceTree = "<group>";
 		};
 		8DF101D41E62867F00838F73 /* Utilities */ = {
@@ -791,12 +811,13 @@
 				8D041A691E641217007A9D5F /* ProductsRepsonse.swift in Sources */,
 				8D7878F21E6174C400B60401 /* Enum.swift in Sources */,
 				8D5001461EA152BA0049BC90 /* CartDetailCellViewModel.swift in Sources */,
-				8DA253471E7B23610099C66B /* CommonUtils.swift in Sources */,
+				8DA253471E7B23610099C66B /* Singleton.swift in Sources */,
 				8D5A42791EA053A700EF0817 /* BardgeLabel.swift in Sources */,
 				8D57D35A1E786832001A1169 /* ProductDetailViewModels.swift in Sources */,
 				8DACABAB1EA1678C00B8F484 /* CheckoutResponse.swift in Sources */,
 				8D57D4161E7970ED001A1169 /* User.swift in Sources */,
 				8D041A4F1E632683007A9D5F /* LoadingView.swift in Sources */,
+				8DACABAD1EA247E100B8F484 /* APIProvider.swift in Sources */,
 				8D57D35D1E786851001A1169 /* ProductDetailViewController.swift in Sources */,
 				8DC4E91D1EA12450005DAED1 /* Extension+Array.swift in Sources */,
 				8D11BB8D1E6559F2008C36A4 /* ImageService.swift in Sources */,
@@ -809,11 +830,14 @@
 				8D7878FC1E618F8D00B60401 /* Extension+String.swift in Sources */,
 				8D11BB941E655B01008C36A4 /* ReachabilityService.swift in Sources */,
 				8D7878EF1E6174A700B60401 /* LoginViewController.swift in Sources */,
+				8DACABB21EA29AE600B8F484 /* Receipt.swift in Sources */,
 				8D041A591E63DD9E007A9D5F /* ProductsViewController.swift in Sources */,
 				8D7878F91E618E3200B60401 /* APIRequest.swift in Sources */,
 				8D041A491E632192007A9D5F /* Extension+Reactive.swift in Sources */,
+				8DACABAF1EA274F600B8F484 /* ServerAPIProvider.swift in Sources */,
 				8D041A4B1E6321EB007A9D5F /* Extension+ValidationResult.swift in Sources */,
 				8D041A651E6411B6007A9D5F /* ProductsCell.swift in Sources */,
+				8DACABB41EA2A57700B8F484 /* Extension+Dictionary.swift in Sources */,
 				8D7878E61E61744500B60401 /* RegisterViewController.swift in Sources */,
 				8D041A531E63B3D0007A9D5F /* LoginResponse.swift in Sources */,
 				8D50013D1EA14E790049BC90 /* CartDetailViewController.swift in Sources */,
